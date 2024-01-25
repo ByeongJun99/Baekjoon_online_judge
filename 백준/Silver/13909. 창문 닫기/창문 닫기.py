@@ -1,5 +1,2 @@
 import sys
-
-n = int(sys.stdin.readline())
-
-print(int(n**0.5))
+print(int(int(sys.stdin.readline())**0.5))
