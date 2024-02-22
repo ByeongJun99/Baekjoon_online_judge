@@ -14,7 +14,7 @@ def queen(a):
     global cnt
     if a == n:
         cnt += 1
-        return
+        return 0
     else:
         for i in range(n):
             row[a] = i
