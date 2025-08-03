@@ -1,0 +1,17 @@
+SELECT EMP_NO
+     , EMP_NAME
+     , CASE WHEN AVG(SCORE) < 80 THEN 'C'
+            WHEN AVG(SCORE) < 90 THEN 'B'
+            WHEN AVG(SCORE) < 96 THEN 'A'
+            ELSE 'S'
+        END 'GRADE'
+     ,(CASE WHEN AVG(SCORE) < 80 THEN 0
+            WHEN AVG(SCORE) < 90 THEN 0.1
+            WHEN AVG(SCORE) < 96 THEN 0.15
+            ELSE 0.2
+        END) * SAL 'BONUS'
+  FROM HR_EMPLOYEES A
+  JOIN HR_DEPARTMENT B USING (DEPT_ID)
+  JOIN HR_GRADE C USING (EMP_NO)
+ GROUP BY 1
+ ORDER BY 1
