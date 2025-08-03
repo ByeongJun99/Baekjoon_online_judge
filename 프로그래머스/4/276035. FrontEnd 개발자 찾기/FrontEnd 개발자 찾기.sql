@@ -1,0 +1,12 @@
+SELECT DISTINCT ID
+     , EMAIL
+     , FIRST_NAME
+     , LAST_NAME
+  FROM DEVELOPERS A
+  JOIN (
+        SELECT *
+          FROM SKILLCODES
+         WHERE CATEGORY = 'Front End'
+       ) B
+    ON (A.SKILL_CODE & B.CODE)
+ ORDER BY 1
