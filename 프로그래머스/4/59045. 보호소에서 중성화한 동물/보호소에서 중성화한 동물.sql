@@ -1,0 +1,8 @@
+SELECT A.ANIMAL_ID
+     , A.ANIMAL_TYPE
+     , A.NAME
+  FROM ANIMAL_INS A
+  JOIN ANIMAL_OUTS B USING (ANIMAL_ID)
+ WHERE SEX_UPON_INTAKE IN ('Intact Male', 'Intact Female')
+   AND SEX_UPON_OUTCOME IN ('Neutered Male', 'Spayed Female')
+ ORDER BY 1
